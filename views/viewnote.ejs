@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>View Note</title>
+  </head>
+  <body>
+    <h1>Notes:</h1><br>
+    <% notes.forEach(function(note, i) { %> 
+      <div class="note">
+        <a href = '/deletenote/<%= note._id%>'></a>
+        <button type = "submit" id = "submit2">edit</button>
+        <button type = "submit" id = "submit3">delete</button>
+        <p><strong><%= note.title %></strong><br> <%= note.note %> </p>
+      </div> 
+    <% }) %>
+  </body>
+</html>
