@@ -46,7 +46,10 @@ router.get('/addnote', function(req, res){
 });
 
 router.get('/viewnote', function(req, res){
-  res.render('viewnote');
+  //res.render('viewnote');
+  Notes.find().exec(function(err, notes){
+  res.render('viewnote', {notes})
+  });
 });
 
 router.post('/addnote', function(req, res){
@@ -64,9 +67,13 @@ router.post('/addnote', function(req, res){
   });
 });
 
-router.delete('/deletenote/:id', function(req, res){
-  Notes.find({_id: req.params.id}).remove();
+router.get('/deletenote/:id', function(req, res) {
+  Notes.findOneAndRemove({_id: req.params.id}, function(err, note) {
+    console.log('deleted note is', note);
+    res.redirect('/viewnote')
+  });
 })
+
 
 router.post('/viewnote', function(req, res){
   console.log('request', req.body);
