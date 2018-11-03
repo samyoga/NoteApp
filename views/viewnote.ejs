@@ -9,7 +9,7 @@
     <h1>Notes:</h1><br>
     <% notes.forEach(function(note, i) { %> 
       <div class="note">
-        <a href=''><i class="far fa-edit"></i></a>
+        <a href='/editnote/<%= note._id%>'><i class="far fa-edit"></i></a>
         <a href='/deletenote/<%= note._id%>'><i class="far fa-trash-alt"></i></a>
         <p><strong><%= note.title %></strong> <%= note.note %></p>
       </div>

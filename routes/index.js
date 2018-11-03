@@ -74,6 +74,12 @@ router.get('/deletenote/:id', function(req, res) {
   });
 })
 
+router.get('/editnote/:id', function(req, res){
+  Notes.findOne({_id: req.params.id}, function(err, note){
+    console.log('edited note is', note);
+    res.render('editnote', {note})
+  });
+})
 
 router.post('/viewnote', function(req, res){
   console.log('request', req.body);

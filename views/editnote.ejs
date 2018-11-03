@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Edit Note</title>
+  </head>
+  <body>
+    <h2>Want to edit?</h2><br>
+    <form method="POST" action="/editnote" id = "edit">
+    Title:<br>
+    <textarea rows ="5" cols = "50" name = "title" id = "title"><%=note.title %></textarea><br>
+    Notes:<br>
+    <textarea rows="20" cols="50" name = "note" id = "note" ><%= note.note%></textarea><br>
+    <button type = "submit" id = "submit1">edit</button><br>
+    </form>
+  </body>
+</html>
