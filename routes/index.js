@@ -81,6 +81,13 @@ router.get('/editnote/:id', function(req, res){
   });
 })
 
+router.post('/editnote', function(req, res){
+  Notes.findOneAndUpdate({_id: req.body._id}, {$set: req.body}, (err, note) =>{
+    console.log('note updated:', note);
+    if(!err) res.redirect('/viewnote')
+  });
+})
+
 router.post('/viewnote', function(req, res){
   console.log('request', req.body);
 });

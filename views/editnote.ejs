@@ -5,12 +5,13 @@
   </head>
   <body>
     <h2>Want to edit?</h2><br>
-    <form method="POST" action="/editnote" id = "edit">
+    <form method="post" action="/editnote" id = "edit">
+    <input class = "form-control" type = "hidden" name='_id' value = "<%= note._id %>">
     Title:<br>
     <textarea rows ="5" cols = "50" name = "title" id = "title"><%=note.title %></textarea><br>
     Notes:<br>
     <textarea rows="20" cols="50" name = "note" id = "note" ><%= note.note%></textarea><br>
-    <button type = "submit" id = "submit1">edit</button><br>
+    <button type = "submit" id = "submit1">Edit</button><br>
     </form>
   </body>
 </html>
